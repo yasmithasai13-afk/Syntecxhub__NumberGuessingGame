@@ -19,6 +19,20 @@ class NumberGuess:
                 print("too high! 🔺")
             else:
                 print("too low! 🔻")
+    def play_again(self):
+        while True:
+             opinion=input("would you like to play again? (y/n): ")
+             if opinion.lower()=='y':
+                self.__init__()
+                self.generate_secret_num()
+                self.check_guess()
+             elif opinion.lower()=='n':
+                print("Thanks for playing! 👋")
+                break
+             else:
+                print("invalid input 🚫")
+                continue
 game=NumberGuess()
 game.generate_secret_num()
 game.check_guess()
+game.play_again()
